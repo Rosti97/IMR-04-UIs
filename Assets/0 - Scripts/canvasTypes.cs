@@ -17,7 +17,7 @@ public class canvasTypes : MonoBehaviour
     [SerializeField] private TextMeshProUGUI watchText;
 
     [Header("Vignette")]
-    [SerializeField] private GameObject vignetteController;
+    [SerializeField] private GameObject vignette;
     [SerializeField] private float vignetteDuration = 2f;
 
     [Header("Input Actions")]
@@ -90,9 +90,9 @@ public class canvasTypes : MonoBehaviour
     private System.Collections.IEnumerator TriggerVignette()
     {
         isStinging = true;
-        vignetteController.SetActive(true);
+        vignette.SetActive(true);
         yield return new WaitForSeconds(vignetteDuration);
-        vignetteController.SetActive(false);
+        vignette.SetActive(false);
         isStinging = false;
     }
 }
